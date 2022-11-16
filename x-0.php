@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X - 0</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <?php include 'header.php';?>
+    <div class="x-0container">
+    <div class="container mt-6">
+        <div class="estilo">
+            <h1 class="title">Jugador: <span id="nombreJugador"></span></h1>
+        </div>
+        <div class="estilo des">
+            <h1 class="title">Color: <span id="colorJugador"></span></h1>
+        </div>
+
+        <div class="columns is-multiline" id="borrarcolor">
+            <div class="column is-4 bloqueo" onclick="jugada(this)" id="1-1">
+
+            </div>
+            <div class="column is-4 bloqueo" onclick="jugada(this)" id="1-2">
+
+            </div>
+            <div class="column is-4 bloqueo" onclick="jugada(this)" id="1-3">
+
+            </div>
+            <div class="column is-4 bloqueo" onclick="jugada(this)" id="2-1">
+
+            </div>
+            <div class="column is-4 bloqueo" onclick="jugada(this)" id="2-2">
+
+            </div>
+            <div class="column is-4 bloqueo" onclick="jugada(this)" id="2-3">
+
+            </div>
+            <div class="column is-4 bloqueo" onclick="jugada(this)" id="3-1">
+
+            </div>
+            <div class="column is-4 bloqueo" onclick="jugada(this)" id="3-2">
+
+            </div>
+            <div class="column is-4 bloqueo" onclick="jugada(this)" id="3-3">
+
+            </div>
+
+            <input type="button" id="delete" value="Empezar" onclick="eliminar()" class="bt">
+
+
+        </div>
+
+    </div>
+    </div>
+
+    <p id="print"></p>
+
+    <script src="js/x-o.js"></script>
+</body>
+
+</html>
