@@ -35,32 +35,29 @@ mostrarDatos();
 
 
 function buscar() {
+
     let busqueda = document.getElementById("buscar").value;
     informacion = "";
     fetch(`https://api.github.com/users/${busqueda}`)
+        .then((res) => res.json())
+        .then((data) => {
+            usuarios(data);
+        });
 
-    .then(response => response.json())
-        .then(data => {
-            console.log(data)
+}
 
-            for (let j = 0; j < data.length; j++) {
+function usuarios(busqueda) {
+    var informacion = `
+                 <div class="col-md-4 espacio">
+                     <div class="card" style="width: 18rem;">
+                       <img class="card-img-top" src="${busqueda.avatar_url}">
+                         <div class="card-body">
+                               <h5 class="card-title">${busqueda.login}</h5>
+                               <p class="card-text">${busqueda.type}</p>
+                               <a href="#" class="btn btn-primary">Ver Movie</a>
+                        </div>
+                     </div>
+                   </div> `;
 
-                informacion += `
-                     <div class="col-md-4 espacio">
-                         <div class="card" style="width: 18rem;">
-                           <img class="card-img-top" src="${data[j].avatar_url}">
-                             <div class="card-body">
-                                   <h5 class="card-title">${data[j].login}</h5>
-                                   <p class="card-text">${data[j].type}</p>
-                                   <a href="#" class="btn btn-primary">Ver Movie</a>
-                            </div>
-                         </div>
-                       </div> `
-            }
-
-            document.getElementById("content").innerHTML = informacion;
-        })
-        .catch(err => console.log(err))
-
-
+    document.getElementById("content").innerHTML = informacion;
 }
