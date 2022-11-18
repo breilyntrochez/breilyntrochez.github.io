@@ -21,7 +21,7 @@ function mostrarDatos() {
                              <div class="card-body">
                                    <h5 class="card-title">${myJson[i].login}</h5>
                                    <p class="card-text">${myJson[i].type}</p>
-                                   <a href="#" class="btn btn-primary">Ver Movie</a>
+                                   <a href="${myJson[i].html_url}" class="btn btn-primary">Ver Perfil</a>
                             </div>
                          </div>
                        </div> `;
@@ -54,7 +54,7 @@ function usuarios(busqueda) {
                          <div class="card-body">
                                <h5 class="card-title">${busqueda.login}</h5>
                                <p class="card-text">${busqueda.type}</p>
-                               <a href="#" class="btn btn-primary">Ver Movie</a>
+                               <a href="${busqueda.html_url}" class="btn btn-primary">Ver Perfil</a>
                         </div>
                      </div>
                    </div> `;
