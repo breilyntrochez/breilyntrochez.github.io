@@ -38,7 +38,7 @@ function mostrarDatos() {
                                        </div>
                                       <div class="modal-footer">
                                           <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
-                                         <a  href="${myJson[i].html_url}" class="btn btn-primary">Ver Perfil</a>
+                                         <a  href="${myJson[i].html_url}" class="btn btn-primary" target="_blank">Ver Perfil</a>
                                      </div>
                                  </div>
                             
@@ -104,7 +104,7 @@ function usuarios(busqueda) {
                      </div>
                     <div class="modal-footer">
                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
-                       <a  href="${busqueda.html_url}" class="btn btn-primary">Ver Perfil</a>
+                       <a  href="${busqueda.html_url}" class="btn btn-primary" target="_blank">Ver Perfil</a>
                   </div>
              </div>
          </div>
