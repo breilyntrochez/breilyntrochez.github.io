@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Moneda</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <style>
+        .bret {
+            color: #fff;
+            background-color: #370037!important;
+            border-color: #370037!important;
+            width: 100%;
+            padding: 5px;
+        }
+        
+        .informacion {
+            width: 100%;
+            height: 80px;
+            margin-top: 50px;
+            padding: 10px;
+            background-color: #A66FA6;
+            color: #fff;
+        }
+    </style>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12" style="margin-top:20% ; text-align: center; margin-bottom: 2%;">
+                <h1>Convierte Las Monedas de tu Preferencia</h1>
+
+            </div>
+
+            <div class="col-md-4">
+                <p><b>Escribe el monto</b></p>
+                <input type="text" name="" id="monto" value="" class="form-control" placeholder="00.00">
+            </div>
+
+            <div class="col-md-4">
+                <p><b>Selecciona la Moneda</b></p>
+
+                <select name="" id="moneda" class="form-control" value="">
+                    <option value="">Seleccionar</option>
+                    <option value="AUD">Australian Dollar</option>
+                    <option value="BGN">Bulgarian Lev</option>
+                    <option value="BRL">Brazilian Real</option>
+                    <option value="CAD">Canadian Dollar</option>
+                    <option value="CHF">Swiss Franc</option>
+                    <option value="CNY">Chinese Renminbi Yuan</option>
+                    <option value="CZK">Czech Koruna</option>
+                    <option value="DKK">Danish Krone</option>
+                    <option value="EUR">Euro</option>
+                    <option value="GBP">British Pound</option>
+                    <option value="HKD">Hong Kong Dollar</option>
+                    <option value="HRK">Croatian Kuna</option>
+                    <option value="HUF">Hungarian Forint</option>
+                    <option value="IDR">Indonesian Rupiah</option>
+                    <option value="ILS">Israeli New Sheqe</option>
+                    <option value="INR">Indian Rupee</option>
+                    <option value="ISK">Icelandic Króna</option>
+                    <option value="JPY">Japanese Yen</option>
+                    <option value="KRW">South Korean Won</option>
+                    <option value="MXN">Mexican Peso</option>
+                    <option value="MYR">Malaysian Ringgit</option>
+                    <option value="NOK">Norwegian Krone</option>
+                    <option value="NZD">New Zealand Dollar</option>
+                    <option value="PHP">Philippine Peso</option>
+                    <option value="PLN">Polish Złoty</option>
+                    <option value="RON">Romanian Leu</option>
+                    <option value="SEK">Swedish Krona</option>
+                    <option value="SGD">Singapore Dollar</option>
+                    <option value="THB">Thai Baht</option>
+                    <option value="TRY">Turkish Lir</option>
+                    <option value="USD">United States Dollar</option>
+                    <option value="ZAR">South African Rand</option>
+                </select>
+
+
+
+            </div>
+
+            <div class="col-md-4">
+                <p><b>Selecciona la Moneda a Convertir</b></p>
+                <select name="" id="monedaConvert" class="form-control" value="">
+                    <option value="">Seleccionar</option>
+                    <option value="AUD">Australian Dollar</option>
+                    <option value="BGN">Bulgarian Lev</option>
+                    <option value="BRL">Brazilian Real</option>
+                    <option value="CAD">Canadian Dollar</option>
+                    <option value="CHF">Swiss Franc</option>
+                    <option value="CNY">Chinese Renminbi Yuan</option>
+                    <option value="CZK">Czech Koruna</option>
+                    <option value="DKK">Danish Krone</option>
+                    <option value="EUR">Euro</option>
+                    <option value="GBP">British Pound</option>
+                    <option value="HKD">Hong Kong Dollar</option>
+                    <option value="HRK">Croatian Kuna</option>
+                    <option value="HUF">Hungarian Forint</option>
+                    <option value="IDR">Indonesian Rupiah</option>
+                    <option value="ILS">Israeli New Sheqe</option>
+                    <option value="INR">Indian Rupee</option>
+                    <option value="ISK">Icelandic Króna</option>
+                    <option value="JPY">Japanese Yen</option>
+                    <option value="KRW">South Korean Won</option>
+                    <option value="MXN">Mexican Peso</option>
+                    <option value="MYR">Malaysian Ringgit</option>
+                    <option value="NOK">Norwegian Krone</option>
+                    <option value="NZD">New Zealand Dollar</option>
+                    <option value="PHP">Philippine Peso</option>
+                    <option value="PLN">Polish Złoty</option>
+                    <option value="RON">Romanian Leu</option>
+                    <option value="SEK">Swedish Krona</option>
+                    <option value="SGD">Singapore Dollar</option>
+                    <option value="THB">Thai Baht</option>
+                    <option value="TRY">Turkish Lir</option>
+                    <option value="USD">United States Dollar</option>
+                    <option value="ZAR">South African Rand</option>
+                </select>
+            </div>
+
+            <div class="col-md-12">
+                <div style="text-align:center ;">
+                    <br>
+
+                    <button onclick="convertidor()" class="bret">Convertidor</button> <br>
+
+                    <div id="cambio"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function convertidor() {
+            const host = 'api.frankfurter.app';
+            var monto = document.getElementById("monto").value;
+            var moneda = document.getElementById("moneda").value;
+            var monedaConvert = document.getElementById("monedaConvert").value;
+            var informacion = "";
+
+            // console.log(monto);
+            // console.log(moneda);
+            // console.log(monedaConvert);
+
+            fetch(`https://${host}/latest?amount=${monto}&from=${moneda}&to=${monedaConvert}`)
+                .then(resp => resp.json())
+                .then((data) => {
+                    var money = data.rates[monedaConvert];
+
+                    informacion += `<div class="informacion">
+                         ${monto} ${moneda} = ${money} ${monedaConvert}<br> 
+                    </div>`;
+
+                    document.getElementById("cambio").innerHTML = informacion;
+
+                    console.log(money);
+                });
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>
