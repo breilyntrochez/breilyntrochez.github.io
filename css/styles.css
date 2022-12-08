@@ -223,14 +223,14 @@ a:hover {
     border-radius: 50%;
     line-height: 1.4;
     margin: 0 15px 0 0;
-    box-shadow: 0 0 0 3px #0078ff;
+    box-shadow: 0 0 0 3px #A66FA6;
     transition: all 500ms ease;
 }
 
 .socials .ico-circle:hover {
-    background-color: #0078ff;
+    background-color: #370037;
     color: #fff;
-    box-shadow: 0 0 0 3px #cde1f8;
+    box-shadow: 0 0 0 3px #ebb6eb;
     transition: all 500ms ease;
 }
 
@@ -254,7 +254,7 @@ a:hover {
 }
 
 .list-ico span {
-    color: #0078ff;
+    color: #A66FA6;
     margin-right: 10px;
 }
 
@@ -821,7 +821,7 @@ a:hover {
 }
 
 .work-content .w-more .w-ctegory {
-    color: #0078ff;
+    color: #370037;
 }
 
 .work-content .w-like {
